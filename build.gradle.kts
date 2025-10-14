@@ -32,6 +32,7 @@ dependencies {
     // Testing
     testImplementation(kotlin("test"))
     testImplementation("com.squareup.okhttp3:mockwebserver:4.12.0")
+    testImplementation("io.ktor:ktor-server-tests:2.3.7")
 }
 
 tasks.test {
