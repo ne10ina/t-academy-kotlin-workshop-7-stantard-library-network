@@ -15,6 +15,7 @@ fun startKtorProxy(port: Int = 8080): ApplicationEngine {
         routing {
             get("/quotes") {
                 val result = runCatching { fetchQuotesWithOkHttp() }
+
                 if (result.isSuccess) {
                     call.respondText(result.getOrThrow(), ContentType.Application.Json)
                 } else {
@@ -28,6 +29,7 @@ fun startKtorProxy(port: Int = 8080): ApplicationEngine {
             }
         }
     }
+
     engine.start()
     return engine
 }
