@@ -33,3 +33,11 @@ fun startKtorProxy(port: Int = 8080): ApplicationEngine {
     engine.start()
     return engine
 }
+
+fun main() {
+    val port = 8080
+    val engine = startKtorProxy(port)
+
+    runCatching { readlnOrNull() }.onFailure { println("Input unavailable, shutting down.") }
+    engine.stop()
+}

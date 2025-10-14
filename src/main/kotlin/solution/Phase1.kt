@@ -25,3 +25,8 @@ fun fetchQuotesWithHttpUrlConnection(endpoint: String = QUOTES_ENDPOINT): String
         connection.disconnect()
     }
 }
+
+fun main() {
+    val result = fetchQuotesWithHttpUrlConnection()
+    println(result)
+}

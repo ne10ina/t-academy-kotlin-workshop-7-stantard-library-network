@@ -11,7 +11,6 @@ class KtorQuotesApi(
     private val client: HttpClient = ktorQuoteClient()
 ) : QuotesApi {
     override suspend fun loadQuotes(): QuotesResponse = fetchQuotesWithKtorClient(url, client)
-    fun close() = client.close()
 }
 
 class QuotesFacade(
